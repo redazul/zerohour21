@@ -809,6 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  PauseMenu: {fileID: 0}
 --- !u!1 &2032360879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,5 +1032,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3423555720f6ef9408b2f2a46400b102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  PauseMenu: {fileID: 0}
+  speed: 5

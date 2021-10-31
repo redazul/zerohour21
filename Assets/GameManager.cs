@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public float score;
+    public Canvas PauseMenu;
+    private bool isPaused;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         PlayerPrefs.SetFloat("score", score);
+
+        if (Input.GetKeyDown(KeyCode.P) && !isPaused)
+        {
+            PauseMenu.gameObject.SetActive(true);
+            isPaused = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.P) && isPaused)
+        {
+            PauseMenu.gameObject.SetActive(false);
+            isPaused = false;
+        }
     }
 
     public void LoadLevel()
