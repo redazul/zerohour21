@@ -5,6 +5,8 @@ using UnityEngine;
 public class Level : MonoBehaviour
 {
     public float speed;
+    public Canvas PauseMenu;
+    private bool isPaused;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +17,17 @@ public class Level : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P) && !isPaused)
+        {
+            PauseMenu.gameObject.SetActive(true);
+            isPaused = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.P) && isPaused)
+        {
+
+        }
+
         transform.Translate(Vector3.up * Time.deltaTime * speed);
-        speed += Time.deltaTime * 0.09f;
+        speed += 0.01f * Time.deltaTime;
     }
 }
