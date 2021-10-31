@@ -16,5 +16,6 @@ public class Level : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up * Time.deltaTime * speed);
+        speed += Time.deltaTime * 0.09f;
     }
 }
