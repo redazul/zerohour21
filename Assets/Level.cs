@@ -24,7 +24,8 @@ public class Level : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.P) && isPaused)
         {
-
+            PauseMenu.gameObject.SetActive(false);
+            isPaused = false;
         }
 
         transform.Translate(Vector3.up * Time.deltaTime * speed);
