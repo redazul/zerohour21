@@ -7,16 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public float score;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        PlayerPrefs.SetFloat("score", score);
+        //Setting playerprefs every fame will cause performance issues. Instead do it in add.
+        //PlayerPrefs.SetFloat("score", score);
     }
 
     public void LoadLevel()
@@ -27,5 +21,6 @@ public class GameManager : MonoBehaviour
     public void Add(float score)
     {
         score += score;
+        PlayerPrefs.SetFloat("score", score);
     }
 }
